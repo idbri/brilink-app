@@ -1,5 +1,6 @@
 const mongoose  = require('mongoose')
 const ENV  =  require('./DB_config')
+const db = require('../../models')
 mongoose.Promise    = global.Promise;
 
 mongoose.connect(ENV.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -12,3 +13,4 @@ mongoose.connect(ENV.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: tru
     console.log(`********** \x1b[31mDB connection err - ${err.message}\x1b[0m ***********`)
    	console.log('')
 });
+

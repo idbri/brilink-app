@@ -10,7 +10,11 @@ const fs            = require('fs')
 
 const app 	= express();
 
-app.use(cors())
+//setting cors
+var corsOptions = {
+    origin: "http://localhost:8081"
+  };
+app.use(cors(corsOptions))
 app.use(bodyParser.json({limit: '10mb', extended: true}))
 app.use(bodyParser.urlencoded({limit: '10mb', extended: true}))
 
